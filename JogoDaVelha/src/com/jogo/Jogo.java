@@ -28,8 +28,9 @@ public class Jogo {
 			}
 
 			System.out.println("=====================");
-			System.out.println("Quer jogar " + i + " em qual posição?");
+			System.out.println("Quer jogar " + i + " em qual linha?");
 			String linha = teclado.nextLine();    // Lê a linha da jogada
+			System.out.println("Quer jogar " + i + " em qual coluna?");
 			String coluna = teclado.nextLine();   // Lê a coluna da jogada
 			int contL = Integer.parseInt(linha);  // Transforma os números em String para poder aplicar no vetor 
 			int contC = Integer.parseInt(coluna); // Transforma os números em String para poder aplicar no vetor 
