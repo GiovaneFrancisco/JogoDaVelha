@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Jogo {
 
 	public static void main(String[] args) {
-		String jogo[][] = { { "|-----|", "|-----|", "|-----|" }, 
-							{ "|-----|", "|-----|", "|-----|" },
-							{ "|-----|", "|-----|", "|-----|" } }; // Cria um vetor multidimensional
+		String jogo[][] = { { "", "", "" }, 
+							{ "", "", "" },
+							{ "", "", "" } }; // Cria um vetor multidimensional
 		char a = 'a';
 		String i = "a";
 		System.out.println("Jogo da velha");
@@ -36,15 +36,20 @@ public class Jogo {
 			int contC = Integer.parseInt(coluna); // Transforma os números em String para poder aplicar no vetor 
 			for (int l = contL - 1; l < jogo.length;) { // Retira 1 do número escolhido 
 				for (int c = contC - 1; c < jogo.length;) {
-					if (jogo[l][c] == "|-----|") { // Se o espaço estiver em branco
-						jogo[l][c] = "|  " + i + "  |"; // O espaço recebe o 'índice' do jogador
+					if (jogo[l][c] == "") { // Se o espaço estiver em branco
+						jogo[l][c] = ""+i; // O espaço recebe o 'índice' do jogador
 						break;
 					} else {
 						System.out.println("Não é possível jogar " + i + " nessa posição"); // Caso não esteja, é impossível jogar
 						break;
 					}
 				}
+
 				break;
+			}
+			if(jogo[0][0]=="X" && jogo[0][1]=="X" && jogo[0][2]=="X") {
+				System.out.println("Jogador X ganhou");
+				System.exit(0);
 			}
 			/*if (jogo[1][1] == "   " + "X" + "   " && jogo[1][2] == "   " + "X" + "   "
 					&& jogo[1][3] == "   " + "X" + "   ") {
